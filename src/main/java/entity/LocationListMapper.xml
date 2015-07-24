@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="position">
+
+	<select id ="selectAll" resultType="com.test.dto.BeaconWithUserIdDTO">
+	select l.beaconId as beaconId , b.lat as lat , b.lng as lng,l.userId as userId, l.mTime as mTime
+	from locationList l , beaconList b
+	where l.BEACONID = b.BEACONID
+	</select>
+	
+	
+	
+	<!-- (select count(*) from beaconList where lat = b.lat and lng = b.lng) as locationCount -->
+</mapper>
